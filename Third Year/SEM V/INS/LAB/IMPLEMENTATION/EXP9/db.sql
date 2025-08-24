@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS Register_Page;
+USE Register_Page;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) NOT NULL UNIQUE,
+    password VARCHAR(20) NOT NULL
+);
