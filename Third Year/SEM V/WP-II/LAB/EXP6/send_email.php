@@ -15,7 +15,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'chandana.g@somaiya.edu';  // Your email
-    $mail->Password   = 'yrmugjiyzylovvsf';         // Your email password
+    $mail->Password   = '';         // Your email password
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
