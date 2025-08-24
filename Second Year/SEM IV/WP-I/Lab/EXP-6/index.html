@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scent Haven - Your Perfume Destination</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f0f3;
+            color: #3f393f;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #3f393f;
+        }
+        .section {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .testimonial p {
+            font-style: italic;
+        }
+        .product-display {
+            text-align: center;
+        }
+        .product-image {
+            width: 200px;
+            transition: transform 0.2s;
+        }
+        .product-image:hover {
+            transform: scale(1.1);
+        }
+        select, button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #3f393f;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        select:hover, button:hover {
+            background-color: #574f57;
+        }
+        input[type=email] {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: calc(100% - 32px);
+            margin-bottom: 10px;
+        }
+        input[type=email]:focus {
+            outline: none;
+            border-color: #574f57;
+        }
+        .quiz {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-answer {
+            margin-bottom: 10px;
+        }
+        .quiz-answer label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body onload="showDailySpecial()">
+    <div class="container">
+        <header>
+            <h1>Welcome to Scent Haven</h1>
+            <div class="email-signup">
+                <input type="email" id="email" onblur="validateEmail()" placeholder="Enter your email to subscribe">
+            </div>
+        </header>
+
+        <main>
+            <section class="daily-special" id="dailySpecial"></section>
+
+            <section class="product-display">
+                <h2>Featured Product</h2>
+                <img src="product.jpg" alt="Perfume" class="product-image" onmouseover="showNotes()" onmouseout="hideNotes()">
+                <p id="notes" style="display:none;">Indulge in the luxurious scent of roses, with hints of jasmine and vanilla.</p>
+                <button onmousedown="playAd()">Discover the Scent</button>
+                <button onclick="addToCart()">Add to Cart</button>
+            </section>
+            
+            <section class="quiz">
+                <h2>Find Your Signature Scent</h2>
+                <form id="perfumeQuiz" onreset="resetQuizFeedback()">
+                    <p>Take our quiz to discover the perfect fragrance for you.</p>
+                    <div class="quiz-question">
+                        <p>1. What scents do you prefer?</p>
+                        <div class="quiz-answer">
+                            <input type="checkbox" id="floral" name="scent" value="floral">
+                            <label for="floral">Floral</label>
+                        </div>
+                        <div class="quiz-answer">
+                            <input type="checkbox" id="woody" name="scent" value="woody">
+                            <label for="woody">Woody</label>
+                        </div>
+                        <div class="quiz-answer">
+                            <input type="checkbox" id="fruity" name="scent" value="fruity">
+                            <label for="fruity">Fruity</label>
+                        </div>
+                        <div class="quiz-answer">
+                            <input type="checkbox" id="oriental" name="scent" value="oriental">
+                            <label for="oriental">Oriental</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. How would you describe your style?</p>
+                        <div class="quiz-answer">
+                            <input type="radio" id="elegant" name="style" value="elegant">
+                            <label for="elegant">Elegant</label>
+                        </div>
+                        <div class="quiz-answer">
+                            <input type="radio" id="casual" name="style" value="casual">
+                            <label for="casual">Casual</label>
+                        </div>
+                        <div class="quiz-answer">
+                            <input type="radio" id="adventurous" name="style" value="adventurous">
+                            <label for="adventurous">Adventurous</label>
+                        </div>
+                        <div class="quiz-answer">
+                            <input type="radio" id="romantic" name="style" value="romantic">
+                            <label for="romantic">Romantic</label>
+                        </div>
+                    </div>
+                    <button onclick="submitQuiz()">Submit</button>
+                    <button type="reset">Start Over</button>
+                </form>
+            </section>
+
+            <section class="collection">
+                <h2>Discover Our Collection</h2>
+                <p>Explore our exquisite collection of perfumes, each crafted with passion and expertise.</p>
+                <p>Our collection includes a wide range of scents, from fresh and floral to warm and woody.</p>
+            </section>
+
+            <section class="testimonials">
+                <h2>Customer Testimonials</h2>
+                <div class="testimonial">
+                    <p>"I'm in love with the scent! Absolutely stunning!" - Emily</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Scent Haven has become my go-to for all things fragrance. Highly recommend!" - Alex</p>
+                </div>
+                <div class="testimonial">
+                    <p>"The perfumes from Scent Haven are like magic in a bottle. I feel elegant every time I wear them." - Sophia</p>
+                </div>
+            </section>
+
+            <section class="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+                <p>Email: info@scenthaven.com</p>
+                <p>Phone: 1-800-SCENTHAVEN</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById('email');
+            if (!email.value.includes('@')) {
+                alert('Please enter a valid email address.');
+                email.focus();
+            } else {
+                alert('Thank you for subscribing!');
+            }
+        }
+
+        function submitQuiz() {
+        var selectedScents = [];
+        var scentCheckboxes = document.querySelectorAll('input[name="scent"]:checked');
+        scentCheckboxes.forEach(function(checkbox) {
+            selectedScents.push(checkbox.value);
+        });
+
+        var selectedStyle = document.querySelector('input[name="style"]:checked');
+
+        if (selectedScents.length === 0 || !selectedStyle) {
+            alert('Please answer all questions.');
+        } else {
+            var scentString = selectedScents.join(', ');
+            var style = selectedStyle.value;
+            var result = 'Based on your preferences (Scents: ' + scentString + ', Style: ' + style + '), we recommend the following perfumes: Perfume A, Perfume B, Perfume C.';
+            alert(result);
+        }
+    }
+
+        function resetQuizFeedback() {
+            alert('Quiz reset. Discover your ideal scent!');
+        }
+
+        function showNotes() {
+            document.getElementById('notes').style.display = 'block';
+        }
+
+        function hideNotes() {
+            document.getElementById('notes').style.display = 'none';
+        }
+
+        function playAd() {
+            alert('Envision a garden in full bloom, every breath filled with a complex, captivating fragrance.');
+        }
+
+        function addToCart() {
+            alert('Elegance is on its way. Your perfume has been added to the cart!');
+        }
+
+        function showDailySpecial() {
+            document.getElementById('dailySpecial').innerHTML = 'Today’s Special: 20% off on Rose Elixir!';
+        }
+    </script>
+</body>
+</html>

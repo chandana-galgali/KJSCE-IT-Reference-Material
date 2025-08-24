@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, select {
+            width: auto;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .address-fields {
+            justify-content: space-between;
+        }
+        .document-upload {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="/backend.php">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" required placeholder="Enter your first name">
+        <label for="mname">Middle name:</label>
+        <input type="text" id="mname" name="mname" placeholder="Enter your middle name">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" required placeholder="Enter your last name">
+        <br><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob" required onchange="calculateAge()">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" readonly><br><br>
+        <label for="phone">Mobile number:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="9870776977" pattern="[1-9]{1}-[0-9]{9}">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+        <br><br>
+        <div class="address-fields">
+            <div>
+                <label for="permanent-address">Permanent Address:</label>
+                <input type="text" id="permanent-address" name="permanent-address" required placeholder="Enter your permanent address" size="23">
+            </div>
+            <br>
+            <div>
+                <label>Is Current Address same as Permanent?</label>
+                <label><input type="radio" name="same-address" value="yes" onclick="toggleCurrentAddress(true)"> Yes</label>
+                <label><input type="radio" name="same-address" value="no" onclick="toggleCurrentAddress(false)"> No</label>
+            </div>
+        </div>
+        <br>
+        <div id="current-address-section" style="display:none;">
+            <label for="current-address">Current Address:</label>
+            <input type="text" id="current-address" name="current-address" placeholder="Enter your current address">
+        </div>
+        <br>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required placeholder="Country">
+        <label for="state">State/Region:</label>
+        <input type="text" id="state" name="state" required placeholder="State/Region">
+        <label for="pincode">Pincode/Zipcode:</label>
+        <input type="text" id="pincode" name="pincode" pattern="\d{6}" required placeholder="Enter your pincode/zipcode">
+        <br>
+        <p>Select the documents uploaded for verification:</p>
+        <input type="checkbox" id="aadharcard" name="aadharcard" value="Aadhar Card">
+        <label for="aadharcard"> Aadhar Card</label>
+        <input type="checkbox" id="passport" name="passport" value="Passport">
+        <label for="passport"> Passport</label>
+        <input type="checkbox" id="drivinglicense" name="drivinglicense" value="Driving License">
+        <label for="drivinglicense"> Driving License</label><br>
+        <div class="document-upload" id="document-upload-section">
+            <label for="myfile">Select the verification documents:</label>
+            <input type="file" id="myfile" name="myfile" multiple><br><br>
+        </div>
+        <input type="submit" onclick="alert('Submitting the response!')" value="Submit">
+        <input type="reset" value="Reset">
+        <script>
+          function calculateAge() {
+            var dobInput = document.getElementById("dob");
+            var ageInput = document.getElementById("age");
+            if (dobInput.value) {
+              var dob = new Date(dobInput.value);
+              var currentDate = new Date();
+
+              var age = currentDate.getFullYear() - dob.getFullYear();
+              if (currentDate.getMonth() < dob.getMonth() || (currentDate.getMonth() === dob.getMonth() && currentDate.getDate() < dob.getDate())) {
+                  age--;
+              }
+              ageInput.value = age;
+            } else {
+                ageInput.value = "";
+             }
+            }
+        </script>
+        <script>
+            function toggleCurrentAddress(isSame) {
+                var currentAddressSection = document.getElementById("current-address-section");
+                currentAddressSection.style.display = isSame ? "none" : "block";
+            }
+        </script>
+        <script>
+          function toggleDocumentUpload() {
+              var documentUploadSection = document.getElementById("document-upload-section");
+              var aadharCheckbox = document.getElementById("aadharcard");
+              var passportCheckbox = document.getElementById("passport");
+              var drivingLicenseCheckbox = document.getElementById("drivinglicense");
+              if (aadharCheckbox.checked || passportCheckbox.checked || drivingLicenseCheckbox.checked) {
+                  documentUploadSection.style.display = "block";
+              } else {
+                  documentUploadSection.style.display = "none";
+              }
+          }
+          document.getElementById("aadharcard").addEventListener("click", toggleDocumentUpload);
+          document.getElementById("passport").addEventListener("click", toggleDocumentUpload);
+          document.getElementById("drivinglicense").addEventListener("click", toggleDocumentUpload);
+      </script>
+    </form>
+</body>
+</html>

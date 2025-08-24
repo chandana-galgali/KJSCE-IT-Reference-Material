@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="perfumestyle.css"?>
+<perfumeShop>
+  <perfume id="1">
+    <name>Chanel No. 5</name>
+    <brand>Chanel</brand>
+    <price>100</price>
+    <quantity>20</quantity>
+  </perfume>
+  <perfume id="2">
+    <name>Flowerbomb</name>
+    <brand>Viktor and Rolf</brand>
+    <price>120</price>
+    <quantity>15</quantity>
+  </perfume>
+  <perfume id="3">
+    <name>Black Opium</name>
+    <brand>Yves Saint Laurent</brand>
+    <price>90</price>
+    <quantity>25</quantity>
+  </perfume>
+</perfumeShop>

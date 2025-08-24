@@ -1,0 +1,55 @@
+<!-- HTML FILE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Registration Form</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" required>
+            
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" required>
+            
+            <label for="telephone">Telephone Number:</label>
+            <input type="text" id="telephone" required>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required><br><br>
+            
+            <label for="course">Course:</label>
+            <select id="course" required>
+                <option value="" disabled selected>Select Course</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electronics and Computer Science">Electronics and Computer Science</option>
+                <option value="Electronics and Telecommunications">Electronics and Telecommunications</option>
+                <option value="Mechanical">Mechanical</option>
+            </select>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

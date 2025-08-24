@@ -1,0 +1,27 @@
+perfumeShop {
+    display: block;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+perfume {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+name, brand, price, quantity {
+    display: block;
+}
+name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+brand {
+    font-style: italic;
+}
+price::before {
+    content: "Price: $";
+}
+quantity::before {
+    content: "Quantity: ";
+}

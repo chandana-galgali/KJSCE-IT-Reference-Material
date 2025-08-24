@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scent Haven: Your Perfume Destination</title>
+    <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #3f393f;
+            background-color: #f4effc;
+            margin: 0;
+            padding: 20px;
+        }
+        #featuredperfumes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+        .featuredperfumes {
+            text-align: center;
+        }
+        h1 {
+            color: #3f393f;
+            text-shadow: 2px 2px 4px #aaa;
+        }
+        h2 {
+            color: #3f393f;
+            border-bottom: 2px solid #3f393f;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        p {
+            color: #3f393f;
+            text-align: justify;
+        }
+        #specialOffer {
+            background: linear-gradient(to right, #8452d4, #ce72ff);
+            -webkit-background-clip: text;
+            background-clip: text; 
+            font-size: 22px;
+            margin-top: 20px;
+        }
+        #description {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        #description:hover {
+            transform: translateY(-5px);
+        }
+        button {
+            background-color: #3f393f;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease-out;
+        }
+        button:hover {
+            background-color: #312e38;
+            transform: scale(1.05);
+        }
+        .slideshow-container {
+            max-width: 350px; 
+            margin: auto; 
+            position: relative;
+        }
+        .mySlides {
+            display: none;
+            max-width: inherit; 
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Scent Haven!</h1>
+    <p id="dateDisplay">Discover your perfect scent today.</p>
+    <div id="featuredperfumes">
+        <div id="perfumeNames">
+            <h2>Featured Perfumes</h2>
+            <ul id="arrayDisplay">
+            </ul>
+        </div>
+        <div id="slideshowContainer" class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="rose_oud.jpg" height="400" width="350">
+            </div>
+            <div class="mySlides fade">
+                <img src="jasmine_twilight.jpg" height="400" width="350">
+            </div>
+            <div class="mySlides fade">
+                <img src="citrus_breeze.jpg" height="400" width="350">
+            </div>
+            <div class="mySlides fade">
+                <img src="amber_elegance.jpg" height="400" width="350">
+            </div>
+            <div class="mySlides fade">
+                <img src="vanilla_dreams.jpg" height="400" width="350">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <h2 id="specialOffer">Special Offer</h2>
+    <p id="description">Click below to reveal our exclusive deal just for you!</p>
+    <button onclick="revealOffer()">Reveal Offer</button>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+    form {
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        padding: 20px;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    h1 {
+        color: #333;
+        text-align: center;
+    }
+    fieldset {
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    legend {
+        font-weight: bold;
+    }
+    label {
+        margin: 10px 0 5px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="range"],
+    input[type="url"],
+    select,
+    textarea {
+        width: fit-content;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type="submit"],
+    input[type="reset"] {
+        cursor: pointer;
+        font-weight: bold;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        margin-right: 10px;
+        background-color: #007bff;
+        color: white;
+    }
+    input[type="reset"] {
+        background-color: #6c757d;
+    }
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        opacity: 0.9;
+    }
+</style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form method="post" action="">
+    <fieldset><legend>Login Details:</legend>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" autofocus>
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd">
+    </fieldset>
+    <br>
+    <fieldset><legend>Personal Details:</legend>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" required placeholder="Enter your first name" minlength="2" maxlength="100" pattern="[A-Za-z]+">
+        <label for="mname">Middle name:</label>
+        <input type="text" id="mname" name="mname" placeholder="Enter your middle name" minlength="2" maxlength="100" pattern="[A-Za-z]+">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" required placeholder="Enter your last name" minlength="2" maxlength="100" pattern="[A-Za-z]+"><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+        </select>
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob" required min="1900-01-01" max="2010-12-31">
+        <label for="age">Age:</label>
+        <input type="range" id="age" name="age" min="0" max="100" step="1" value="18" title="Adjust age">
+        <label for="eyecolor">Eye Color:</label>
+        <input type="color" id="eyecolor" name="eyecolor" value="#ffffff" title="Choose your favorite color">
+    </fieldset>
+    <br>
+    <fieldset><legend>Contact Details:</legend>
+        <label for="phone">Mobile number:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="9870776977" pattern="[0-9]{10}" maxlength="10" title="Ten digit mobile number">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="username@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email address">
+    </fieldset>
+    <br>
+    <fieldset><legend>Professional Details:</legend>
+        <p>Choose your profession:
+        <input type="radio" id="student" name="profession" value="Student">
+        <label for="student">Student</label>
+        <input type="radio" id="working" name="profession" value="Working">
+        <label for="working">Working</label>
+        <input type="radio" id="retired" name="profession" value="Retired">
+        <label for="retired">Retired</label></p>
+        <label for="linkedin">LinkedIn Profile:</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://example.com" pattern="https?://.*" title="Include http:// or https://">
+    </fieldset>
+    <br>
+    <fieldset><legend>Residential Details:</legend>
+        <p>Enter your Address:</p>
+        <textarea name="message" style="width:400px; height:150px;"></textarea><br>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required placeholder="Country" >
+        <label for="state">State/Region:</label>
+        <input type="text" id="state" name="state" required placeholder="State/Region">
+        <label for="pincode">Pincode/Zipcode:</label>
+        <input type="text" id="pincode" name="pincode" pattern="\d{6}" required placeholder="Enter your pincode/zipcode">
+    </fieldset>
+    <br>
+    <fieldset><legend>Identity Proof Details:</legend>
+        <p>Select the documents uploaded for verification:
+        <input type="checkbox" id="aadharcard" name="aadharcard" value="Aadhar Card">
+        <label for="aadharcard"> Aadhar Card</label>
+        <input type="checkbox" id="passport" name="passport" value="Passport">
+        <label for="passport"> Passport</label>
+        <input type="checkbox" id="drivinglicense" name="drivinglicense" value="Driving License">
+        <label for="drivinglicense"> Driving License</label></p>
+        <label for="myfile">Select the verification documents:</label>
+        <input type="file" id="myfile" name="myfile" multiple accept=".pdf,.doc,.jpg" title="Upload documents">
+    </fieldset>
+    <br>
+        <input type="submit" onclick="alert('Submitted!')" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
