@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1707325374 source:c:\users\chand\downloads\iv sem\aa\exp-3\exp3\untitled1.c
+	<stdio.h>
+	<stdbool.h>
+	<limits.h>
+
