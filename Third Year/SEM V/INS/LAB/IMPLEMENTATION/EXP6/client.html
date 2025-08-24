@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffie-Hellman Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .step {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #6345a0;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4c4eaf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diffie-Hellman Key Exchange Simulation</h1>
+        <div class="step">
+            <h2>Step 1: Choose Prime Number (p) and Generator (g)</h2>
+            <label for="prime">Prime Number (p):</label>
+            <input type="number" id="prime" placeholder="Enter a prime number" value="23">
+            <label for="generator">Generator (g):</label>
+            <input type="number" id="generator" placeholder="Enter a generator" value="5">
+            <button onclick="choosePrimeAndGenerator()">Set p and g</button>
+        </div>
+        <div class="step">
+            <h2>Step 2: Generate Secret Key</h2>
+            <button onclick="generateSecret()">Generate Secret for Client</button>
+            <p id="secret"></p>
+        </div>
+        <div class="step">
+            <h2>Step 3: Calculate RA and Send to Server</h2>
+            <button onclick="calculateRA()">Calculate RA and Send</button>
+            <p id="public-key"></p>
+        </div>
+        <div class="step">
+            <h2>Step 4: Calculate Shared Key</h2>
+            <button onclick="calculateSharedKey()">Calculate Shared Key</button>
+            <p id="shared-key"></p>
+        </div>
+        <div class="step">
+            <h2>Step 5: Secure Communication</h2>
+            <button onclick="secureCommunication()">Secure Communication</button>
+            <p id="encrypted-message"></p>
+            <p id="decrypted-message"></p>
+        </div>
+    </div>
+
+    <script>
+        let p, g, a, RA, RB;
+
+        function choosePrimeAndGenerator() {
+            p = BigInt(document.getElementById('prime').value);
+            g = BigInt(document.getElementById('generator').value);
+            alert(`Chosen Prime (p): ${p}, Generator (g): ${g}`);
+        }
+
+        function generateSecret() {
+            a = BigInt(Math.floor(Math.random() * (Number(p) - 2)) + 1);
+            document.getElementById('secret').innerText = `Client's Secret (a): ${a}`;
+        }
+
+        function calculateRA() {
+            RA = g ** a % p;
+            document.getElementById('public-key').innerText = `Calculated RA (g^a mod p): ${RA}`;
+            
+            fetch('http://127.0.0.1:5500/exchange', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ p: p.toString(), g: g.toString(), RA: RA.toString() })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.RB) {
+                    RB = BigInt(data.RB);
+                    alert(`Received RB from server: ${RB}`);
+                } else {
+                    alert('RB has not been received from the server.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function calculateSharedKey() {
+            if (RB === undefined) {
+                alert('RB has not been received from the server.');
+                return;
+            }
+            let KAB = RB ** a % p;
+            document.getElementById('shared-key').innerText = `Shared Key KAB (Client's perspective): ${KAB}`;
+        }
+
+        function secureCommunication() {
+            let KAB = RB ** a % p;
+            fetch('http://127.0.0.1:5500/secure_communication', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ shared_key: KAB.toString() })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let encryptedMessage = data.encrypted_message;
+                let decryptedMessage = data.decrypted_message;
+                document.getElementById('encrypted-message').innerText = `Encrypted Message: ${encryptedMessage}`;
+                document.getElementById('decrypted-message').innerText = `Decrypted Message: ${decryptedMessage}`;
+            });
+        }
+    </script>
+</body>
+</html>
