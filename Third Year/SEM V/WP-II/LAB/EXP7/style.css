@@ -1,0 +1,207 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Serif', 'Times New Roman', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f5f5f5; /* Light background for contrast */
+    color: #333333; /* Dark grey for primary text */
+    font-family: 'Georgia', 'Times New Roman', serif;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    color: #333333;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Container for perfume cards */
+.perfume-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Perfume Card Styling */
+.perfume-card {
+    background-color: #1f2b46; /* Dark navy-blue background */
+    color: #f5f5f5; /* Light text color */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.perfume-card h2 {
+    font-size: 1.8em;
+    color: #d4af37; /* Gold color for headings */
+    margin-bottom: 10px;
+    font-family: 'Garamond', serif;
+}
+
+.perfume-card p {
+    font-size: 1em;
+    margin: 8px 0;
+    color: #d1d1d1; /* Soft grey for descriptive text */
+}
+
+/* Button Styling */
+button {
+    background-color: #d4af37; /* Gold background */
+    color: #1f2b46; /* Dark navy-blue text color */
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #b69329; /* Darker shade of gold */
+}
+
+/* Styling for Form Container */
+#create-form {
+    background-color: #1f2b46;
+    color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#create-form h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+#create-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#create-form input[type="text"],
+#create-form input[type="number"],
+#create-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    width: 100%;
+}
+
+#create-form input[type="text"]:focus,
+#create-form input[type="number"]:focus,
+#create-form textarea:focus {
+    outline: none;
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* Styling for Action Buttons inside Perfume Cards */
+.perfume-card button {
+    width: 45%;
+    margin: 5px 2%;
+    padding: 8px;
+}
+
+.perfume-card button:first-of-type {
+    background-color: #d9534f; /* Red for delete */
+    color: #fff;
+}
+
+.perfume-card button:first-of-type:hover {
+    background-color: #c9302c;
+}
+
+.perfume-card button:last-of-type {
+    background-color: #5bc0de; /* Light blue for edit */
+    color: #1f2b46;
+}
+
+.perfume-card button:last-of-type:hover {
+    background-color: #31b0d5;
+}
+
+/* Additional Layout Elements */
+.main-content {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.introduction {
+    background-color: #d4af37; /* Gold background */
+    color: #1f2b46; /* Dark navy text */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.introduction h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #1f2b46;
+    color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 2px solid #d4af37;
+    margin-top: 30px;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d4af37;
+    color: #1f2b46;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:hover {
+    background-color: #b69329;
+}

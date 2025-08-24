@@ -1,0 +1,81 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #001f3f; /* Dark navy */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+/* Container styling */
+.update-container {
+    background-color: #fff5e6; /* Light peach */
+    width: 450px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Title styling */
+.update-container h2 {
+    font-size: 28px;
+    color: #ff6b6b; /* Soft coral */
+    margin-bottom: 25px;
+}
+
+/* Label styling */
+.update-container label {
+    display: block;
+    font-size: 16px;
+    color: #001f3f; /* Dark navy */
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+/* Input and textarea styling */
+.update-container input[type="number"],
+.update-container textarea {
+    width: calc(100% - 30px); /* Ensures padding on both sides */
+    padding: 12px;
+    margin: 8px 15px; /* Equal margin on both sides */
+    border: 1px solid #d9b5a5; /* Soft peach */
+    border-radius: 6px;
+    background-color: #ffffff; /* White for strong contrast */
+    font-size: 15px;
+    color: #001f3f;
+}
+
+/* Textarea styling adjustments */
+.update-container textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+/* Submit button styling */
+.update-container input[type="submit"] {
+    background-color: #ff6b6b; /* Coral */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: calc(100% - 30px); /* Matches input width */
+}
+
+.update-container input[type="submit"]:hover {
+    background-color: #ff4c4c; /* Darker coral */
+}
