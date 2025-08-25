@@ -1,4 +1,4 @@
-# KJSCE IT Reference Material (2022-2026) 🎓
+# KJSCE IT Reference Material 🎓
 
 Welcome! 👋 
 This repository is a centralized collection of academic resources for students of the Information Technology branch at **K. J. Somaiya College of Engineering (KJSCE)**, specifically for the **2022-2026 batch**.
@@ -12,7 +12,7 @@ The goal is to create a helpful, open-source knowledge base for our batchmates. 
 The content is organized by academic year to make navigation simple and intuitive. Inside each year's folder, you will find sub-folders for different subjects, labs, and projects.
 
 ```
-KJSCE-IT-Reference-Material-2022-2026/
+KJSCE-IT-Reference-Material/
 ├── 📄 First Year/           # First Year Materials
 ├── 📄 Second Year/           # Second Year Materials
 ├── 📄 Third Year/           # Third Year Materials
