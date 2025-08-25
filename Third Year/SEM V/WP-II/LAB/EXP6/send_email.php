@@ -12,20 +12,18 @@ try {
     // Server settings
     $mail->SMTPDebug = 2;
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
+    $mail->Host       = '';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'chandana.g@somaiya.edu';  // Your email
+    $mail->Username   = '';  // Your email
     $mail->Password   = '';         // Your email password
     $mail->SMTPSecure = 'tls';
-    $mail->Port       = 587;
+    $mail->Port       = ;
 
     // Recipients
-    $mail->setFrom('chandana.g@somaiya.edu', 'Perfume Paradise');  
-    $mail->addAddress('prachi.gandhi@somaiya.edu', 'Prachi Gandhi');
-    $mail->addAddress('mahek.jt@somaiya.edu', 'Mahek Thakkar'); 
-    $mail->addCC('samrudhi.b@somaiya.edu'); 
-    $mail->addCC('t.mangaonkar@somaiya.edu');
-    $mail->addBCC('anand.pt@somaiya.edu');
+    $mail->setFrom('', '');  
+    $mail->addAddress('', '');
+    $mail->addCC(''); 
+    $mail->addBCC('');
 
     // Email Content
     $mail->isHTML(true);
