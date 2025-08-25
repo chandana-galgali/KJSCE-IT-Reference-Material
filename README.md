@@ -25,7 +25,7 @@ This repository contains a mix of the following:
 
 * **Lecture Notes & PPTs:** Slides and notes from various subjects.
 * **Lab Write-ups:** The reports, assignments for practical sessions.
-* **Source Code & Implementation:** The actual code files (`.py`, `.java`, etc.) for labs, mini-projects and assignments.
+* **Source Code & Implementation:** The actual code files (`.py`, `.c`, etc.) for labs, mini-projects and assignments.
 * **Reports & Posters:** Project reports and posters created for IA submissions, etc.
 * **Reference Materials:** Other useful documents and resources that I found helpful.
 
