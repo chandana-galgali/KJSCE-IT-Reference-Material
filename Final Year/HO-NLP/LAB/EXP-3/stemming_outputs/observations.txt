@@ -1,0 +1,11 @@
+Porter     vocab reduction vs. original: 33.44%
+Snowball   vocab reduction vs. original: 34.32%
+Lancaster  vocab reduction vs. original: 45.38%
+Regexp     vocab reduction vs. original: 15.09%
+
+Notes:
+- Lancaster is the most aggressive; expect more collisions (possible over-stemming).
+- Snowball is a refined version of Porter for English; typically balanced and multilingual in general.
+- Regexp only strips patterns you specify; safe but limited (may under-stem vs. algorithmic stemmers).
+- Over-stemming: different words collapsing to one stem (see collisions tables).
+- Under-stemming: related words kept apart (see checked examples like 'analysis' vs 'analyst').

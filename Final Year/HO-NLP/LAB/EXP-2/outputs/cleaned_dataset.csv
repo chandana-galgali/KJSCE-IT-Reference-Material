@@ -1,0 +1,23 @@
+post_id,post_text,cleaned_text,cleaned_tokens
+1,"   <p>How do I fix 'NullPointerException' in Java?   </p>
+I tried this code:   <code>obj.toString()</code> but obj is None...    
+Docs: https://docs.oracle.com/javase/8/docs/api/  
+Thanks!!!   ",fix 'NullPointerException Java tried code obj.toString obj None ... Docs Thanks,fix 'NullPointerException Java tried code obj.toString obj None ... Docs Thanks
+2,"Python regex help: need to capture emails from text. 
+See this link -> https://example.com/articles?ref=so   and also   http://foo.bar/a/b/c .
+Any tips??? <b>Much appreciated</b>",Python regex help need capture emails text See link also tips Much appreciated,Python regex help need capture emails text See link also tips Much appreciated
+3,"   Getting 500 error on /login   .NET Core app deployed on Azure; 
+logs say: 'Unhandled exception'.   
+What could cause this???   <a href=""https://myapp.com/logs?id=42"">logs</a>   ",Getting 500 error /login .NET Core app deployed Azure logs say 'Unhandled exception could cause logs,Getting 500 error /login .NET Core app deployed Azure logs say 'Unhandled exception could cause logs
+4,"Best way to remove stopwords in NLTK?? I'm using word_tokenize() .  
+Also, how to keep punctuation like ! or ? for sentiment.    
+Thanks <i>everyone</i> !!!",Best way remove stopwords NLTK 'm using word_tokenize Also keep punctuation like sentiment Thanks everyone,Best way remove stopwords NLTK 'm using word_tokenize Also keep punctuation like sentiment Thanks everyone
+5,"  HTML inside user comments breaks my parser <div class=""x"">oops</div> 
+Should I strip tags?   Or escape them?    any library??   ",HTML inside user comments breaks parser oops strip tags escape library,HTML inside user comments breaks parser oops strip tags escape library
+6,"   Performance issue: pandas groupby is slow on 10e6 rows;    
+code here: https://gist.github.com/user/abc123  (warning: long).    
+Ideas to speed up???   ",Performance issue pandas groupby slow 10e6 rows code warning long Ideas speed,Performance issue pandas groupby slow 10e6 rows code warning long Ideas speed
+7,"   Can't install package: pip says 'No matching distribution found for xyz==0.0.1'  
+Python==3.12; OS: Windows 11;   guide: https://pypi.org/project/xyz/   ",Ca n't install package pip says 'No matching distribution found xyz==0.0.1 Python==3.12 OS Windows 11 guide,Ca n't install package pip says 'No matching distribution found xyz==0.0.1 Python==3.12 OS Windows 11 guide
+8,"    Extra      spaces      and tabs		 here; also some punctuation... !!! ??? 
+And HTML-like <tag>fake</tag> stuff plus URL: https://github.com/org/repo#readme   ",Extra spaces tabs also punctuation ... HTML-like fake stuff plus URL,Extra spaces tabs also punctuation ... HTML-like fake stuff plus URL

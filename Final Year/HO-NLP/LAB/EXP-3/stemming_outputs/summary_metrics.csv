@@ -1,0 +1,5 @@
+Stemmer,Unique tokens AFTER,Vocab reduction vs. original
+porter,50446,33.44%
+snowball,49772,34.32%
+lancaster,41396,45.38%
+regexp,64349,15.09%

@@ -1,0 +1,23 @@
+post_id,post_text
+1,"   <p>How do I fix 'NullPointerException' in Java?   </p>
+I tried this code:   <code>obj.toString()</code> but obj is None...    
+Docs: https://docs.oracle.com/javase/8/docs/api/  
+Thanks!!!   "
+2,"Python regex help: need to capture emails from text. 
+See this link -> https://example.com/articles?ref=so   and also   http://foo.bar/a/b/c .
+Any tips??? <b>Much appreciated</b>"
+3,"   Getting 500 error on /login   .NET Core app deployed on Azure; 
+logs say: 'Unhandled exception'.   
+What could cause this???   <a href=""https://myapp.com/logs?id=42"">logs</a>   "
+4,"Best way to remove stopwords in NLTK?? I'm using word_tokenize() .  
+Also, how to keep punctuation like ! or ? for sentiment.    
+Thanks <i>everyone</i> !!!"
+5,"  HTML inside user comments breaks my parser <div class=""x"">oops</div> 
+Should I strip tags?   Or escape them?    any library??   "
+6,"   Performance issue: pandas groupby is slow on 10e6 rows;    
+code here: https://gist.github.com/user/abc123  (warning: long).    
+Ideas to speed up???   "
+7,"   Can't install package: pip says 'No matching distribution found for xyz==0.0.1'  
+Python==3.12; OS: Windows 11;   guide: https://pypi.org/project/xyz/   "
+8,"    Extra      spaces      and tabs		 here; also some punctuation... !!! ??? 
+And HTML-like <tag>fake</tag> stuff plus URL: https://github.com/org/repo#readme   "
